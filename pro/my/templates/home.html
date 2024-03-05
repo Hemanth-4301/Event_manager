@@ -53,9 +53,7 @@
         }
     </style>
 </head>
-{% load static %}
-<link rel="stylesheet" href="{% static 'styles.css' %}">
-<body style="background-image: url({% static 'home_bag.jpg' %}); background-repeat:no-repeat;::background-size:200%;">
+<body>
     <h1>Welcome to CSE-B Event Manager</h1>
     <div class="button-container">
         <a href="{% url 'add_event' %}">
