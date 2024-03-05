@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Month</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, hsl(145, 100%, 69%), #feb47b, hsl(194, 100%, 69%)); /* Gradient background */
+            color: #333; /* Dark text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-size: 400% 400%;
+            animation: gradientBG 4s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            margin-top: 50px; /* Adjust as needed */
+            color: #fff; /* White text for heading */
+        }
+        form {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: hsl(6, 38%, 85%); /* White background */
+            color: #333; /* Dark text */
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Friendship is the only cement that will ever hold the world together</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="month">Choose a month:</label>
+        <select name="month" id="month">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        <button type="submit">Display</button>
+    </form>
+</body>
+</html>

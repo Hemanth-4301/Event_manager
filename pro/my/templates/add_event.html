@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif; /* Use a common sans-serif font */
+            background-size: cover; /* Cover ensures the background image covers the entire container */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent background image from repeating */
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            color: #333; /* Dark gray text */
+            text-align: center; /* Center align the text */
+        }
+        form {
+            background-color: #fff; /* White background for the form */
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: hsl(0, 0%, 100%); /* White background */
+            color: #333; /* Dark text */
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555; /* Dark gray text for labels */
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3763db; /* Green background for button */
+            color: white; /* White text color */
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #30d654; /* Darker green on hover */
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var date = document.getElementById("date").value;
+            var month = document.getElementById("month").value;
+            var name = document.getElementById("name").value;
+
+            if (date === "" || month === "" || name === "") {
+                alert("Please fill in all fields.");
+                return false;
+            }
+        }
+    </script>
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+<body style="background-image: url({% static 'ad.jpg' %}); background-repeat:no-repeat;::background-size:200%;">
+    <h2>Enter About Event</h2>
+    <form method="POST" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" pattern="(0?[1-9]|[12][0-9]|3[01])" required>
+        
+        <label for="month">Month:</label>
+        <select id="month" name="month" required>
+            <option value="">Select Month</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        
+        <label for="name">Event name:</label>
+        <input type="text" id="name" name="name">
+        
+        <button type="submit">Add Event</button>
+    </form>
+</body>
+</html>

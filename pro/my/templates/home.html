@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-image: linear-gradient(to right, #4b6cb7, #182848); /* Gradient background */
+            color: #fff; /* White text */
+            background-image: url('add_event_bag.jpg');
+            background-size: cover; /* Cover ensures the background image covers the entire container */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent background image from repeating */
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        h1 {
+            margin-top: 100px; /* Adjust as needed */
+        }
+        a {
+            text-decoration: none;
+            color: #fff; /* White text for links */
+        }
+        .button-container {
+            margin-top: 50px; /* Adjust as needed */
+        }
+        button {
+            background-color: #ff6600; /* Orange background */
+            color: #fff; /* White text */
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff8533; /* Darker orange on hover */
+        }
+        .fa {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+<body style="background-image: url({% static 'home_bag.jpg' %}); background-repeat:no-repeat;::background-size:200%;">
+    <h1>Welcome to CSE-B Event Manager</h1>
+    <div class="button-container">
+        <a href="{% url 'add_event' %}">
+            <button><i class="fas fa-plus"></i>  Add Event</button>
+        </a>
+        <a href="{% url 'display_events' %}">
+            <button><i class="fas fa-calendar-alt"></i>  Display all events</button>
+        </a>
+        <a href="{% url 'image_page' %}">
+            <button><i class="fas fa-image"></i>  Glimpse of CSE-B</button>
+        </a>
+    </div>
+</body>
+</html>

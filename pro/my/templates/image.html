@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Images with Alignment</title>
+    <style>
+        .image-container {
+            text-align: center;
+        }
+        .image-container img {
+            margin: 10px;
+        }
+    </style>
+</head>
+{% load static %}
+<body>
+    <div class="image-container">
+        <!-- <img src="{% static 'main.jpg' %}" height="800" width="1200" alt="Image 1"> -->
+        <img src="{% static 'main.jpg' %}" height="800" width="1200" alt="Image 1">
+        <img src="{% static 'img002.jpg' %}" alt="Image 3">
+        <img src="{% static 'img02.jpg' %}"  height="800" width="1200" alt="Image 3">
+        <img src="{% static 'img4.jpg' %}"  height="800" width="1200" alt="Image 3">
+        <img src="{% static 'img3.jpg' %}"  height="800" width="1200" alt="Image 3">    
+        <img src="{% static 'img6.jpg' %}"  height="800" width="1200" alt="Image 3">
+        <img src="{% static 'img7.jpg' %}"  height="800" width="1200" alt="Image 3">
+        <img src="{% static 'img1.jpg' %}"  height="800" width="1200" alt="Image 3">
+        <img src="{% static 'img5.jpg' %}" alt="Image 3">
+    </div>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+             /* Set the height of the background image to the full viewport height */
+            font-family: Arial, sans-serif; /* Use a common sans-serif font */
+        }
+        /* Additional CSS styles for content can be added here */
+    </style>
+</head>
+<body>
+    <!-- Your content here -->
+
