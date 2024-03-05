@@ -15,7 +15,7 @@ def add_event(request):
     if request.method == 'POST':
         date = request.POST.get('date')
         month = request.POST.get('month')
-        name = request.POST.get('name')
+        name = request.POST.get('name').lower()
         
         # Check if the event already exists
         if not Event.objects.filter(date=date, month=month, name=name).exists():
